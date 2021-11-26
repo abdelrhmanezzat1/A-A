@@ -1,0 +1,20 @@
+@import "../../app.scss";
+.toggle {
+  position: fixed;
+  right: 70px;
+  top: 15px;
+  background-color: var(--footer-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: var(--trans);
+
+  .icon {
+    font-size: 30px;
+    color: var(--font-color);
+    cursor: pointer;
+  }
+}

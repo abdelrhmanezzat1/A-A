@@ -1,0 +1,62 @@
+:root {
+  --min-color: #adc2a9;
+  --home-color: #4f8a8b;
+  //   --home-color: #87aaaa;
+  //   --font-color: #f0a500;
+  --font-color: #f8df8b;
+  //   //   --font-color: #fbd46d;
+  --secndery-color: #99a799;
+  --bg-color: #f4f6ff;
+  //   --bg1-color: #71a0a5;
+  --bg1-color: #79b4b7;
+  //   --bg1-color: #87aaaa;
+  --shado-color: #00000052;
+  --trans: all 0.5s ease-in-out;
+  --app-bg: #fff;
+  --footer-color: #142f43;
+}
+.app {
+  transition: var(--trans);
+  &.Dark {
+    // --home-color: #4c5f7a;
+    --home-color: #044a42;
+    --footer-color: #b8e1dd;
+    --app-bg: #062925;
+    --bg-color: #b8e1dd;
+    --shado-color: beige;
+    --bg1-color: #3a9188;
+    // --bg-color: #b8e1dd;
+    --font-color: #ffc045;
+    // --font-color: #c84b31;
+    // background-color: #383a56;
+    background-color: #062925;
+  }
+}
+
+%center {
+  display: flex;
+  align-items: center;
+}
+%col {
+  flex-direction: column;
+  justify-content: center;
+}
+%space {
+  justify-content: space-between;
+}
+%con {
+  margin: 20px auto;
+  padding: 15px;
+  width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}

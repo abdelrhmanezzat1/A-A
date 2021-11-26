@@ -1,0 +1,146 @@
+@import "../../app.scss";
+.pro {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--trans);
+
+  margin-top: 20px;
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+
+    margin: 20px 0;
+    color: var(--bg1-color);
+    border: 1.5px solid var(--home-color);
+    padding: 10px;
+    border-radius: 9px;
+    position: relative;
+    cursor: pointer;
+    transition: var(--trans);
+    &:hover {
+      background-color: var(--home-color);
+      color: var(--font-color);
+    }
+    &:hover .icon {
+      color: var(--font-color);
+    }
+    &:hover::before {
+      animation: fill 0.5s infinite alternate;
+      transition: var(--trans);
+    }
+    &:hover::after {
+      animation: filla 0.5s infinite alternate;
+      transition: var(--trans);
+    }
+    .icon {
+      color: var(--bg1-color);
+      margin-right: 5px;
+      transition: var(--trans);
+    }
+    &::before {
+      content: "";
+      left: -37px;
+      top: 17px;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-image: linear-gradient(
+        var(--home-color) 50%,
+        var(--font-color) 50%
+      );
+      border-radius: 50%;
+      transition: var(--trans);
+      animation: run 0.5s infinite alternate;
+    }
+    &::after {
+      transition: var(--trans);
+      animation: run 0.5s infinite alternate;
+      content: "";
+      right: -37px;
+      top: 17px;
+      position: absolute;
+      width: 25px;
+      border-radius: 50%;
+      height: 25px;
+      background-image: linear-gradient(
+        var(--home-color) 50%,
+        var(--font-color) 50%
+      );
+    }
+  }
+  .allcards {
+    margin-bottom: 20px;
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: center;
+    background-color: var(--home-color);
+    padding: 25px;
+    border-radius: 9px;
+    overflow: hidden;
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      border: 2px solid var(--font-color);
+      border-radius: 9px;
+      overflow: hidden;
+      box-shadow: 2px 2px 2px 3px #00000052;
+      transition: var(--trans);
+      transform-origin: center;
+      &:hover {
+        transform: scale(0.9);
+        border-top: 0;
+      }
+      img {
+        width: 100%;
+        position: relative;
+        transition: 8s cubic-bezier(0.15, 0.17, 0.48, 0.5);
+        transform: translateY(0);
+        cursor: pointer;
+        &:hover {
+          transform: translateY(-54%);
+          @media (max-width: 797px) {
+            transform: translateY(-75%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes run {
+  to {
+    top: 0;
+  }
+  from {
+    top: 20px;
+  }
+}
+@keyframes fill {
+  to {
+    left: -37px;
+  }
+  from {
+    left: 3px;
+  }
+}
+@keyframes filla {
+  to {
+    right: -37px;
+  }
+  from {
+    right: 3px;
+  }
+}

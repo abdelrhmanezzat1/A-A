@@ -1,0 +1,222 @@
+@import "../../app.scss";
+.contact {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: var(--trans);
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: var(--bg1-color);
+    border: 1.5px solid var(--home-color);
+    padding: 10px;
+    border-radius: 9px;
+    z-index: 999;
+    position: relative;
+    cursor: pointer;
+    transition: var(--trans);
+    &:hover {
+      background-color: var(--home-color);
+      color: var(--font-color);
+    }
+    &:hover .icon {
+      color: var(--font-color);
+    }
+    &:hover::before {
+      animation: fill 0.5s infinite alternate;
+      transition: var(--trans);
+    }
+    &:hover::after {
+      animation: filla 0.5s infinite alternate;
+      transition: var(--trans);
+    }
+    .icon {
+      color: var(--bg1-color);
+      margin-right: 5px;
+      transition: var(--trans);
+    }
+    &::before {
+      content: "";
+      left: -37px;
+      top: 17px;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-image: linear-gradient(
+        var(--home-color) 50%,
+        var(--font-color) 50%
+      );
+      border-radius: 50%;
+      transition: var(--trans);
+      animation: run 0.5s infinite alternate;
+    }
+    &::after {
+      transition: var(--trans);
+      animation: run 0.5s infinite alternate;
+      content: "";
+      right: -37px;
+      top: 17px;
+      position: absolute;
+      width: 25px;
+      border-radius: 50%;
+      height: 25px;
+      background-image: linear-gradient(
+        var(--home-color) 50%,
+        var(--font-color) 50%
+      );
+    }
+  }
+  .All {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    @media screen and (max-width: 379px) {
+      gap: 10px;
+    }
+    @media (max-width: 797px) {
+      flex-direction: column;
+    }
+    .right {
+      width: 80%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--trans);
+      }
+    }
+    .left {
+      width: 80%;
+      background-color: var(--home-color);
+      height: 100%;
+      position: relative;
+      padding: 15px 25px;
+      @media screen and (max-width: 379px) {
+        padding: 0;
+      }
+      .data {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--bg1-color);
+        height: 54px;
+        @media (max-width: 797px) {
+          display: none;
+        }
+        h5 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--font-color);
+
+          .icon {
+            font-size: 25px;
+            color: var(--bg-color);
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: var(--bg-color);
+      padding: 0 20px;
+
+      input {
+        width: 50%;
+        height: 50px;
+        border: none;
+        border-bottom: 2px solid var(--font-color);
+        margin: 15px 0;
+        padding: 15px;
+        font-size: 15px;
+        font-weight: 400;
+        outline: none;
+        border-radius: 9px;
+        color: var(--font-color);
+        &::placeholder {
+          color: var(--font-color);
+        }
+        background-color: var(--bg1-color);
+        @media screen and (max-width: 480px) {
+          height: 30px;
+        }
+        @media (max-width: 797px) {
+          width: 100%;
+        }
+      }
+      textarea {
+        width: 100%;
+        padding: 15px 15px 0;
+        font-size: 15px;
+        font-weight: 400;
+        border: none;
+        border-bottom: 2px solid var(--font-color);
+        outline: none;
+        background-color: var(--bg1-color);
+        color: var(--font-color);
+        border-radius: 9px;
+        &::placeholder {
+          color: var(--font-color);
+        }
+      }
+      button {
+        padding: 15px;
+        margin: 15px;
+        border: none;
+        background-color: var(--font-color);
+        color: var(--home-color);
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 9px;
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+      h6 {
+        margin-bottom: 10px;
+        font-size: 15px;
+        margin-top: 10px;
+        text-align: center;
+        color: var(--home-color);
+      }
+    }
+  }
+}
+@keyframes run {
+  to {
+    top: 0;
+  }
+  from {
+    top: 20px;
+  }
+}
+@keyframes fill {
+  to {
+    left: -37px;
+  }
+  from {
+    left: 3px;
+  }
+}
+@keyframes filla {
+  to {
+    right: -37px;
+  }
+  from {
+    right: 3px;
+  }
+}
